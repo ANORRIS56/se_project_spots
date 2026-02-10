@@ -22,4 +22,11 @@ The page includes a user profile section and an image gallery made up of cards. 
 This webpage is deployed using GitHub Pages.
 
 🔗 **Live site:**  
-https://<your-github-username>.github.io/<repository-name>/
+https://anorris56.github.io/se_project_spots/
+
+https://drive.google.com/file/d/1JUGpzbiEIrxaphhGYNnrR7VUldnyr-7x/view?usp=sharing
+
+## Project Pitch Video
+
+Check out [Spots Video Stage 2]https://drive.google.com/file/d/1JUGpzbiEIrxaphhGYNnrR7VUldnyr-7x/view?usp=sharing, where I describe my
+project and some challenges I faced while building it.

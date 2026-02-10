@@ -38,6 +38,8 @@
   margin-top: auto;
   background-color: transparent;
   border: transparent;
+  position: relative;
+  right: 80px;
 }
 
 .profile__edit-btn:hover {
