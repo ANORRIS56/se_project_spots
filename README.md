@@ -1,21 +1,25 @@
-# Project 3: Spots
+# Spots
 
-### Overview  
+An image-sharing webpage that showcases different locations through photo cards.  
+Users can view profile information and browse a responsive gallery of images that adapts to different screen sizes.
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+## Description
+
+Spots is a static web project built to practice clean HTML structure, BEM methodology, and modern CSS layout techniques.  
+The page includes a user profile section and an image gallery made up of cards. Each card displays an image and a title, and the layout adjusts smoothly between desktop and mobile screen sizes.
+
+## Tech Stack
+
+- HTML
+- CSS
+- Responsive Design
+- CSS Grid
+- Flexbox
+- BEM Methodology
+
+## Deployment
+
+This webpage is deployed using GitHub Pages.
+
+🔗 **Live site:**  
+https://<your-github-username>.github.io/<repository-name>/
