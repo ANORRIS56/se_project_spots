@@ -23,6 +23,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  font-size: 32px;
 }
 
 .profile__description {
@@ -58,12 +59,12 @@
   display: flex;
   margin-left: auto;
   margin-top: auto;
-  width: 149px;
+  width: 157px;
   height: 52px;
   border-radius: 8px;
   background-color: #212121;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
-  font-weight: 500px;
+  font-weight: 500;
   font-size: 16px;
   line-height: 100%;
   color: #fcf5e5;
@@ -90,6 +91,7 @@
     margin: 0 0 12px;
     height: 80px;
     width: 80px;
+    border-radius: 8px;
   }
 
   .profile__name {
