@@ -81,11 +81,9 @@
 
 @media screen and (max-width: 630px) {
   .profile {
-    flex-direction: column;
-    max-width: 288px;
+    margin: 20px 16px;
     align-items: center;
-    text-align: center;
-    padding-top: 20px;
+    flex-direction: column;
   }
 
   .profile__avatar {
@@ -120,5 +118,11 @@
     position: static;
     right: auto;
     margin: 0 auto;
+  }
+}
+@media screen and (max-width: 630px) {
+  .profile__column {
+    align-items: center;
+    text-align: center;
   }
 }
