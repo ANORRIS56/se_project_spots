@@ -39,7 +39,7 @@
             </button>
           </div>
 
-          <button type="button" class="profile__add-btn">
+          <button type="button" class="profile__new-post-btn">
             <img src="./images/plus.svg" alt="Plus Icon" aria-hidden="true" />
             New Post
           </button>
@@ -127,7 +127,9 @@
       <footer class="footer">
         <p class="footer__copyright">2026 © Spots</p>
       </footer>
-      <div class="modal">
+
+      <!-- EDIT PROFILE MODAL -->
+      <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn">X</button>
           <h2 class="modal__title">Edit profile</h2>
@@ -154,10 +156,12 @@
           </form>
         </div>
       </div>
-      <div class="modal">
+
+      <div class="modal" id="new-post-modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn">X</button>
           <h2 class="modal__title">New post</h2>
+
           <form class="modal__form">
             <label for="card-image-input" class="modal__label">
               image link
@@ -182,5 +186,7 @@
         </div>
       </div>
     </div>
+
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
