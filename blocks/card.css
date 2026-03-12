@@ -1,5 +1,6 @@
 .card {
   position: relative;
+  overflow: hidden;
 }
 
 .card__image {
@@ -8,8 +9,13 @@
   height: 413px;
   object-fit: cover;
   border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s;
 }
 
+.card__image:hover {
+  opacity: 0.8;
+}
 .card__content {
   display: flex;
   justify-content: space-between;
@@ -78,7 +84,7 @@
   transform: scale(1.15);
 }
 
-@media screen and (max-width: 627px) {
+@media screen and (max-width: 630px) {
   .card__image {
     height: 288px;
   }
