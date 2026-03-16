@@ -1,0 +1,70 @@
+const config = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__submit-btn",
+  inactiveButtonClass: "modal__submit-btn_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible"
+};
+
+function showInputError(formElement, inputElement) {
+  const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
+
+  inputElement.classList.add(config.inputErrorClass);
+  errorElement.textContent = inputElement.validationMessage;
+  errorElement.classList.add(config.errorClass);
+}
+
+function hideInputError(formElement, inputElement) {
+  const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
+
+  inputElement.classList.remove(config.inputErrorClass);
+  errorElement.textContent = "";
+  errorElement.classList.remove(config.errorClass);
+}
+
+function checkInputValidity(formElement, inputElement) {
+  if (!inputElement.validity.valid) {
+    showInputError(formElement, inputElement);
+  } else {
+    hideInputError(formElement, inputElement);
+  }
+}
+
+function hasInvalidInput(inputList) {
+  return inputList.some((inputElement) => !inputElement.validity.valid);
+}
+
+function toggleButtonState(inputList, buttonElement) {
+  if (hasInvalidInput(inputList)) {
+    buttonElement.classList.add(config.inactiveButtonClass);
+    buttonElement.disabled = true;
+  } else {
+    buttonElement.classList.remove(config.inactiveButtonClass);
+    buttonElement.disabled = false;
+  }
+}
+
+function setEventListeners(formElement) {
+  const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
+  const buttonElement = formElement.querySelector(config.submitButtonSelector);
+
+  toggleButtonState(inputList, buttonElement);
+
+  inputList.forEach((inputElement) => {
+    inputElement.addEventListener("input", () => {
+      checkInputValidity(formElement, inputElement);
+      toggleButtonState(inputList, buttonElement);
+    });
+  });
+}
+
+function enableValidation() {
+  const formList = Array.from(document.querySelectorAll(config.formSelector));
+
+  formList.forEach((formElement) => {
+    setEventListeners(formElement);
+  });
+}
+
+enableValidation();

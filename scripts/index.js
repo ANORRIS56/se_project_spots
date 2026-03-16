@@ -41,7 +41,6 @@ const newPostBtn = document.querySelector(".profile__new-post-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const newPostModal = document.querySelector("#new-post-modal");
 
-/* PREVIEW MODAL */
 const imageModal = document.querySelector("#image-modal");
 const previewImage = imageModal.querySelector(".modal__image");
 const previewCaption = imageModal.querySelector(".modal__caption");
@@ -55,19 +54,39 @@ const imageInput = document.querySelector("#card-image-input");
 const captionInput = document.querySelector("#post-caption-input");
 
 const closeButtons = document.querySelectorAll(".modal__close-btn");
+const modals = document.querySelectorAll(".modal");
+
+function handleEscClose(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
+}
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", handleEscClose);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", handleEscClose);
 }
 
 closeButtons.forEach((button) => {
   button.addEventListener("click", function () {
     const modal = button.closest(".modal");
     closeModal(modal);
+  });
+});
+
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", function (evt) {
+    if (evt.target === modal) {
+      closeModal(modal);
+    }
   });
 });
 
@@ -79,8 +98,10 @@ editProfileBtn.addEventListener("click", function () {
 
 editProfileForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
+
   profileName.textContent = nameInput.value;
   profileDescription.textContent = descriptionInput.value;
+
   closeModal(editProfileModal);
 });
 
@@ -88,7 +109,6 @@ newPostBtn.addEventListener("click", function () {
   openModal(newPostModal);
 });
 
-/* REQUIRED FUNCTION NAME */
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true).querySelector(".card");
 
@@ -109,11 +129,11 @@ function getCardElement(data) {
     cardElement.remove();
   });
 
-  /* IMAGE PREVIEW */
   cardImage.addEventListener("click", function () {
     previewImage.src = data.link;
     previewImage.alt = data.name;
     previewCaption.textContent = data.name;
+
     openModal(imageModal);
   });
 
@@ -134,8 +154,10 @@ newPostForm.addEventListener("submit", function (evt) {
   };
 
   const cardElement = getCardElement(newCard);
+
   cardsList.prepend(cardElement);
 
   newPostForm.reset();
+
   closeModal(newPostModal);
 });

@@ -30,3 +30,5 @@ https://drive.google.com/file/d/1JUGpzbiEIrxaphhGYNnrR7VUldnyr-7x/view?usp=shari
 
 Check out [Spots Video Stage 2]https://drive.google.com/file/d/1JUGpzbiEIrxaphhGYNnrR7VUldnyr-7x/view?usp=sharing, where I describe my
 project and some challenges I faced while building it.
+
+Check out [Spots Video Stage 9]https://drive.google.com/file/d/1wo6DSI8xfsIV15_u0wEbzMK7HGPPDUqM/view?usp=sharing.
