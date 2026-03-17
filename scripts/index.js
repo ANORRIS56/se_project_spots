@@ -93,6 +93,7 @@ modals.forEach((modal) => {
 editProfileBtn.addEventListener("click", function () {
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
+
   openModal(editProfileModal);
 });
 
