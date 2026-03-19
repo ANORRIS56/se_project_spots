@@ -62,6 +62,20 @@ function setEventListeners(formElement, config) {
   });
 }
 
+function resetValidation(formElement, config) {
+  const inputList = Array.from(
+    formElement.querySelectorAll(config.inputSelector),
+  );
+
+  const buttonElement = formElement.querySelector(config.submitButtonSelector);
+
+  toggleButtonState(inputList, buttonElement, config);
+
+  inputList.forEach((inputElement) => {
+    hideInputError(formElement, inputElement, config);
+  });
+}
+
 function enableValidation(config) {
   const formList = Array.from(document.querySelectorAll(config.formSelector));
 

@@ -94,6 +94,7 @@ editProfileBtn.addEventListener("click", function () {
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
 
+  resetValidation(editProfileForm, settings);
   openModal(editProfileModal);
 });
 
@@ -107,6 +108,7 @@ editProfileForm.addEventListener("submit", function (evt) {
 });
 
 newPostBtn.addEventListener("click", function () {
+  resetValidation(newPostForm, settings);
   openModal(newPostModal);
 });
 
@@ -141,7 +143,7 @@ function getCardElement(data) {
   return cardElement;
 }
 
-initialCards.forEach(function (card) {
+initialCards.forEach((card) => {
   const cardElement = getCardElement(card);
   cardsList.append(cardElement);
 });
@@ -155,10 +157,8 @@ newPostForm.addEventListener("submit", function (evt) {
   };
 
   const cardElement = getCardElement(newCard);
-
   cardsList.prepend(cardElement);
 
   newPostForm.reset();
-
   closeModal(newPostModal);
 });

@@ -39,6 +39,8 @@
 }
 
 .profile__edit-btn {
+  display: flex;
+  gap: 8px;
   margin-top: auto;
   background-color: transparent;
   border: none;
